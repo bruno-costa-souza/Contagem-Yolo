@@ -1,0 +1,8 @@
+path: /Library/Workspace/faculdade_tcc/contagem-yolo/dataset
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: parafuso
+  1: porca
+  2: arruela

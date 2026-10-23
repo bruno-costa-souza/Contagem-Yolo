@@ -1,0 +1,10 @@
+imagem,parafuso_real,parafuso_previsto,porca_real,porca_previsto,arruela_real,arruela_previsto,total_real,total_previsto
+img_001.jpg,0,0,2,0,1,0,3,0
+img_007.jpg,0,0,0,0,1,0,1,0
+img_008.jpg,0,0,1,0,1,0,2,0
+img_014.jpg,0,0,1,0,0,0,1,0
+img_015.jpg,1,3,0,0,0,0,1,3
+img_017.jpg,0,0,0,0,1,0,1,0
+img_040.jpg,1,4,3,0,0,0,4,4
+img_047.jpg,1,3,2,0,1,0,4,3
+img_056.jpg,0,0,3,0,0,0,3,0

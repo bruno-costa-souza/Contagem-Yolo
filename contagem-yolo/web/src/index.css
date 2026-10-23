@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --color-base: #09090b;
+  --color-superficie: #111113;
+  --color-superficie-2: #18181b;
+  --color-superficie-3: #222226;
+  --color-borda: #27272a;
+  --color-borda-forte: #3f3f46;
+
+  --color-texto: #fafafa;
+  --color-texto-suave: #a1a1aa;
+  --color-texto-fraco: #71717a;
+
+  --color-primario: #fafafa;
+  --color-primario-texto: #09090b;
+  --color-foco: #93c5fd;
+
+  --color-sucesso: #4ade80;
+  --color-erro: #f87171;
+  --color-aviso: #fbbf24;
+
+  --radius-painel: 14px;
+  --radius-controle: 9px;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-texto);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+.fundo-grade {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+.painel {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borda);
+  border-radius: var(--radius-painel);
+}
+
+.botao {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-controle);
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, opacity 0.15s;
+}
+
+.botao:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.botao-primario {
+  background-color: var(--color-primario);
+  color: var(--color-primario-texto);
+}
+
+.botao-primario:enabled:hover {
+  background-color: #d4d4d8;
+}
+
+.botao-secundario {
+  border: 1px solid var(--color-borda-forte);
+  background-color: var(--color-superficie-2);
+  color: var(--color-texto);
+}
+
+.botao-secundario:enabled:hover {
+  background-color: var(--color-superficie-3);
+}
+
+.rotulo-secao {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-texto-fraco);
+}
+
+input[type="range"].faixa {
+  appearance: none;
+  height: 1.5rem;
+  background: transparent;
+}
+
+input[type="range"].faixa::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--color-texto) var(--progresso),
+    var(--color-superficie-3) var(--progresso)
+  );
+}
+
+input[type="range"].faixa::-webkit-slider-thumb {
+  appearance: none;
+  margin-top: -6px;
+  height: 16px;
+  width: 16px;
+  border-radius: 9999px;
+  background: var(--color-texto);
+  box-shadow: 0 0 0 4px rgba(250, 250, 250, 0.12);
+}
+
+input[type="range"].faixa::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-superficie-3);
+}
+
+input[type="range"].faixa::-moz-range-progress {
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-texto);
+}
+
+input[type="range"].faixa::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border: none;
+  border-radius: 9999px;
+  background: var(--color-texto);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+.numeros {
+  font-variant-numeric: tabular-nums;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .surgir {
+    animation: surgir 0.25s ease-out;
+  }
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

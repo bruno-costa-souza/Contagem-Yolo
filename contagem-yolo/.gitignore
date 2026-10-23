@@ -1,0 +1,10 @@
+venv/
+venv-rotulagem/
+__pycache__/
+*.pyc
+*.cache
+
+.DS_Store
+.vscode/
+.idea/
+.claude/
